@@ -117,7 +117,7 @@ import '../styles/global.css';
         <h2 class="text-4xl sm:text-5xl font-bold text-white">How we're different.</h2>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
         <!-- Card 1 -->
         <div class="rounded-xl border border-white/5 bg-[#111827] p-8 hover:border-blue-500/30 transition-colors group">
           <div class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
@@ -167,6 +167,19 @@ import '../styles/global.css';
           <h3 class="text-lg font-bold text-white mb-3">Full-service</h3>
           <p class="text-slate-400 text-sm leading-relaxed">
             Hardware procurement through managed operations. Or just the architecture and handoff. Your call.
+          </p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="rounded-xl border border-white/5 bg-[#111827] p-8 hover:border-blue-500/30 transition-colors group">
+          <div class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-3">Partner-native</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            We integrate with Red Hat OpenShift AI, Dell AI Factory, and IBM watsonx. Our governance, observability, and guardrails layer complements what your platform vendor sells.
           </p>
         </div>
       </div>
@@ -278,6 +291,89 @@ import '../styles/global.css';
     </div>
   </section>
 
+  <!-- ── ENGAGEMENT FUNNEL ─────────────────────────────────────────────────── -->
+  <section id="funnel" class="py-28 bg-[#0f1628]">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="text-center mb-16">
+        <p class="text-sm font-semibold text-blue-400 uppercase tracking-widest mb-3">How we start</p>
+        <h2 class="text-4xl sm:text-5xl font-bold text-white">The engagement model.</h2>
+        <p class="text-slate-400 mt-4 max-w-xl mx-auto">Every full platform build starts somewhere. These are the door-openers — low-risk ways to establish what's real and what's worth building.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <!-- Step 1: AI Ideation Workshop -->
+        <div class="rounded-xl border border-white/5 bg-[#111827] p-8 hover:border-blue-500/30 transition-colors">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400 font-bold text-sm flex-shrink-0">1</div>
+            <span class="text-xs text-blue-400 font-semibold uppercase tracking-widest">Entry point</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">AI Ideation Workshop</h3>
+          <div class="text-2xl font-black text-blue-400 mb-1">$15K–$25K</div>
+          <div class="text-xs text-slate-500 mb-4">2 days</div>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Prioritize use cases, kick off governance, measure AI maturity. Walk out with a ranked list of what to build first.
+          </p>
+        </div>
+
+        <!-- Step 2: AI Readiness Assessment -->
+        <div class="rounded-xl border border-white/5 bg-[#111827] p-8 hover:border-blue-500/30 transition-colors">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400 font-bold text-sm flex-shrink-0">2</div>
+            <span class="text-xs text-slate-500 font-semibold uppercase tracking-widest">Or start here</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">AI Readiness Assessment</h3>
+          <div class="text-2xl font-black text-blue-400 mb-1">$40K–$60K</div>
+          <div class="text-xs text-slate-500 mb-4">2–4 weeks</div>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            6-dimension maturity scorecard, gap analysis, and a 90-day roadmap. Know exactly where you stand before committing budget.
+          </p>
+        </div>
+
+        <!-- Step 3: Proof of Value -->
+        <div class="rounded-xl border border-white/5 bg-[#111827] p-8 hover:border-blue-500/30 transition-colors">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400 font-bold text-sm flex-shrink-0">3</div>
+            <span class="text-xs text-slate-500 font-semibold uppercase tracking-widest">De-risk first</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Proof of Value</h3>
+          <div class="text-2xl font-black text-blue-400 mb-1">$15K–$40K</div>
+          <div class="text-xs text-slate-500 mb-4">2–4 weeks</div>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Governed platform + 1 live use case with your real data. No hardware commitment upfront. Prove it works before you invest.
+          </p>
+        </div>
+      </div>
+
+      <!-- Arrow to platform tiers -->
+      <div class="flex items-center justify-center mb-6">
+        <div class="flex items-center gap-3 text-slate-500 text-sm">
+          <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l3 3m0 0l-3 3m3-3H2" />
+          </svg>
+          <span>Then choose your platform tier</span>
+          <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l3 3m0 0l-3 3m3-3H2" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+        <a href="#engagements" class="rounded-lg border border-white/5 bg-[#111827]/50 p-4 text-center hover:border-white/10 transition-colors">
+          <div class="text-sm font-semibold text-slate-300">Starter</div>
+          <div class="text-xs text-slate-500 mt-1">~$100K</div>
+        </a>
+        <a href="#engagements" class="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4 text-center hover:border-blue-500/50 transition-colors">
+          <div class="text-sm font-semibold text-blue-400">Standard</div>
+          <div class="text-xs text-slate-500 mt-1">$200–500K</div>
+        </a>
+        <a href="#engagements" class="rounded-lg border border-white/5 bg-[#111827]/50 p-4 text-center hover:border-white/10 transition-colors">
+          <div class="text-sm font-semibold text-slate-300">Enterprise</div>
+          <div class="text-xs text-slate-500 mt-1">Custom</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ── ENGAGEMENT TIERS ──────────────────────────────────────────────────── -->
   <section id="engagements" class="py-28">
     <div class="mx-auto max-w-7xl px-6">
@@ -286,6 +382,7 @@ import '../styles/global.css';
         <h2 class="text-4xl sm:text-5xl font-bold text-white">Engagements.</h2>
       </div>
 
+      <!-- Platform tiers -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Starter -->
         <div class="rounded-xl border border-white/5 bg-[#111827] p-8 flex flex-col">
@@ -380,6 +477,68 @@ import '../styles/global.css';
           </a>
         </div>
       </div>
+
+      <!-- Ongoing engagements -->
+      <div class="mt-10">
+        <div class="text-center mb-8">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-widest">Ongoing engagements</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Fractional AI CTO -->
+          <div class="rounded-xl border border-white/5 bg-[#111827] p-8 flex flex-col">
+            <div class="mb-6">
+              <div class="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-400 mb-3">Monthly retainer</div>
+              <h3 class="text-lg font-bold text-white mb-1">Fractional AI CTO</h3>
+              <div class="text-3xl font-black text-slate-100 mb-1">$10K–$20K<span class="text-lg font-medium text-slate-400">/mo</span></div>
+              <div class="text-sm text-slate-500">architecture leadership + oversight</div>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-400 flex-1 mb-8">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Architecture leadership and code review
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Governance and compliance oversight
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                For teams with the platform but not the expertise
+              </li>
+            </ul>
+            <a href="#contact" class="rounded-md border border-purple-500/30 bg-purple-500/10 px-6 py-3 text-sm font-semibold text-purple-400 text-center hover:bg-purple-500/20 transition-colors">
+              Let's talk
+            </a>
+          </div>
+
+          <!-- Rescue Engagement -->
+          <div class="rounded-xl border border-white/5 bg-[#111827] p-8 flex flex-col">
+            <div class="mb-6">
+              <div class="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-3 py-1 text-xs font-medium text-red-400 mb-3">Fixed scope</div>
+              <h3 class="text-lg font-bold text-white mb-1">Rescue Engagement</h3>
+              <div class="text-3xl font-black text-slate-100 mb-1">$40K–$80K</div>
+              <div class="text-sm text-slate-500">diagnose, rebuild, ship</div>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-400 flex-1 mb-8">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Inherited a failed AI project
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Full diagnosis: architecture, data, governance
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Rebuild and deliver to production
+              </li>
+            </ul>
+            <a href="#contact" class="rounded-md border border-red-500/30 bg-red-500/10 px-6 py-3 text-sm font-semibold text-red-400 text-center hover:bg-red-500/20 transition-colors">
+              Get diagnosed
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -388,11 +547,22 @@ import '../styles/global.css';
     <div class="mx-auto max-w-3xl px-6">
       <div class="text-center mb-12">
         <p class="text-sm font-semibold text-blue-400 uppercase tracking-widest mb-3">Contact</p>
-        <h2 class="text-4xl sm:text-5xl font-bold text-white">Ready to stop piloting<br />and start producing?</h2>
-        <p class="text-slate-400 mt-4">Drop us a line. We'll respond within one business day.</p>
+        <h2 class="text-4xl sm:text-5xl font-bold text-white">Not sure where to start?</h2>
+        <p class="text-slate-400 mt-4 max-w-lg mx-auto">Start with a workshop and walk out knowing exactly what to build. Or just talk to us about your situation.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+          <a href="#contact-form"
+             class="rounded-md bg-blue-600 px-8 py-3.5 text-sm font-semibold text-white hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/20">
+            Start with a workshop
+          </a>
+          <a href="mailto:contact@forgecf.com"
+             class="rounded-md border border-white/10 bg-white/5 px-8 py-3.5 text-sm font-semibold text-slate-300 hover:bg-white/10 hover:text-white transition-colors">
+            Talk to us about your situation
+          </a>
+        </div>
       </div>
 
       <form
+        id="contact-form"
         name="contact"
         method="POST"
         action="mailto:contact@forgecf.com"
