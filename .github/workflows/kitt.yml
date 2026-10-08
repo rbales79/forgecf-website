@@ -1,0 +1,53 @@
+# KITT checks (vendored scripts) — installed by kitt/tools/adopt/adopt.sh in a repo the KITT owner does not own.
+# rbales79/kitt's actions are private to its owner, so the two check scripts live in .github/kitt/ at kitt@e6066637c685d0e46c54b3e6fbf5fb5fedc8c3f4. The job name `checks` is the ruleset's required check;
+# it always runs (no paths-ignore), so a docs-only PR goes green in seconds instead of waiting forever.
+name: kitt
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened, labeled, unlabeled]
+permissions:
+  contents: read
+  pull-requests: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: pr-check
+        env:
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_HEAD: ${{ github.event.pull_request.head.ref }}
+          BODY: ${{ github.event.pull_request.body }}
+        run: |
+          out="$(printf '%s' "$BODY" | bash .github/kitt/pr-body.sh)" && exit 0
+          echo "::error title=PR body::$out"; exit 1
+      - name: docs-check
+        env:
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_HEAD: ${{ github.event.pull_request.head.ref }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          LABELS: ${{ join(github.event.pull_request.labels.*.name, ' ') }}
+        run: |
+          case " $LABELS " in *" docs-ok "*) echo "docs-ok label present: docs-check waived"; exit 0;; esac
+          out="$(bash .github/kitt/docs-drift.sh "$BASE_SHA" HEAD)" && exit 0
+          echo "$out"
+          # .github/kitt/docs-check.advisory: the repo chose to see findings without failing on them
+          if [ -f .github/kitt/docs-check.advisory ]; then echo "::warning title=Docs drift (advisory)::documents name files this PR changes; see the log"; exit 0; fi
+          echo "::error title=Docs drift::documents name files this PR changes; see the log"; exit 1
+      # gitleaks binary over base..head (gitleaks-action scans from <first commit>^, which fails on a root commit)
+      - name: gitleaks
+        env:
+          GL_VERSION: 8.24.3
+          GL_SHA256: 9991e0b2903da4c8f6122b5c3186448b927a5da4deef1fe45271c3793f4ee29c
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          t="gitleaks_${GL_VERSION}_linux_x64.tar.gz"
+          curl -fsSL -o "$RUNNER_TEMP/$t" "https://github.com/gitleaks/gitleaks/releases/download/v${GL_VERSION}/$t"
+          echo "$GL_SHA256  $RUNNER_TEMP/$t" | sha256sum -c -
+          tar -xzf "$RUNNER_TEMP/$t" -C "$RUNNER_TEMP" gitleaks
+          "$RUNNER_TEMP/gitleaks" git --redact -v --log-opts="$BASE_SHA..$HEAD_SHA" .
