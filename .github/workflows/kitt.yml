@@ -1,5 +1,5 @@
 # KITT checks (vendored scripts) — installed by kitt/tools/adopt/adopt.sh in a repo the KITT owner does not own.
-# rbales79/kitt's actions are private to its owner, so the two check scripts live in .github/kitt/ at kitt@1f0a6be929f75c48bd5c3cf61e0ba5b505007e52. The job name `checks` is the ruleset's required check;
+# rbales79/kitt's actions are private to its owner, so the two check scripts live in .github/kitt/ at kitt@e6066637c685d0e46c54b3e6fbf5fb5fedc8c3f4. The job name `checks` is the ruleset's required check;
 # it always runs (no paths-ignore), so a docs-only PR goes green in seconds instead of waiting forever.
 name: kitt
 on:
@@ -18,12 +18,16 @@ jobs:
           fetch-depth: 0
       - name: pr-check
         env:
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_HEAD: ${{ github.event.pull_request.head.ref }}
           BODY: ${{ github.event.pull_request.body }}
         run: |
           out="$(printf '%s' "$BODY" | bash .github/kitt/pr-body.sh)" && exit 0
           echo "::error title=PR body::$out"; exit 1
       - name: docs-check
         env:
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_HEAD: ${{ github.event.pull_request.head.ref }}
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           LABELS: ${{ join(github.event.pull_request.labels.*.name, ' ') }}
         run: |
