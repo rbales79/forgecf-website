@@ -1,0 +1,24 @@
+# This repo's Backstage entity (foundation.roybales.com). Seeded by kitt/tools/adopt/catalog-files.py
+# (kitt#41); yours to edit. spec.lifecycle was seeded from commit activity: change it when it is wrong.
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: forgecf-website
+  title: forgecf-website
+  description: ""
+  annotations:
+    github.com/project-slug: rbales79/forgecf-website
+    backstage.io/source-location: url:https://github.com/rbales79/forgecf-website/tree/main/
+    github.com/dependabot: "true"
+    openssf/scorecard-location: https://scorecard-files:8443/github.com/rbales79/forgecf-website.json
+  tags:
+  - astro
+  - public
+  links:
+  - url: https://github.com/rbales79/forgecf-website
+    title: GitHub
+spec:
+  type: repository
+  lifecycle: dormant
+  owner: group:default/owners
+  system: rbales79
